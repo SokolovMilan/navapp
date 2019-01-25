@@ -8,12 +8,12 @@ export default class Signin extends Component {
         super();
         this.state = {
             number: 0
-        }
+        };
 
-        this.onpress = this.onpress.bind(this);
+        this.onPress = this.onPress.bind(this);
     }
 
-    onpress(){
+    onPress(){
         console.log('ulogovani ste');
         this.props.navigation.navigate('App');
     }
@@ -24,10 +24,8 @@ export default class Signin extends Component {
                 <Button
                     color="red"
                     title="Sign In"
-                    onPress={this.onpress}
+                    onPress={this.onPress}
                 />
-
-
             </View>
 
         );
@@ -36,7 +34,8 @@ export default class Signin extends Component {
 
 const styles = StyleSheet.create({
     container222:{
-       marginTop: 100
+       flex: 1,
+       alignItems: 'center',
+       justifyContent: 'center'
     }
-
 });
