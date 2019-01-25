@@ -10,6 +10,14 @@ import Css from '../Navigation/vezbacss';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
+const RootStack = createStackNavigator({
+    Prva: Prva,
+    Lista: Lista,
+    Api: Api,
+    Css: Css,
+});
+
+
 const Tab = createBottomTabNavigator(
     {
         Home: {
@@ -27,7 +35,7 @@ const Tab = createBottomTabNavigator(
             }
         },
         Explore: {
-            screen: Explore,
+            screen: RootStack,
             navigationOptions: {
                 tabBarIcon: ({ tintColor }) => (
                     <Icon name="ios-apps" size={24} color="blue"/>
@@ -45,28 +53,11 @@ const Tab = createBottomTabNavigator(
 
 );
 
-const RootStack = createStackNavigator(
-    { Prva: Prva},
-    { Lista: Lista },
-    { Api: Api },
-    { Css: Css}
-);
-
-
-const AppStack = createStackNavigator(
-    { Tab: Tab },
-    { Root: RootStack},
-    {
-        initialRouteName: 'Tab'
-    }
-);
-
 
 const AppContainer = createAppContainer(createSwitchNavigator(
     {
-        App: AppStack,
-        SignIn: SignInScreen,
-        RootStack: RootStack
+        App: Tab,
+        SignIn: SignInScreen
     },
     {
         initialRouteName: 'SignIn',

@@ -40,7 +40,7 @@ export default class Cetvrta extends Component {
                     <Button
                         color="red"
                         title="Idi na Prvu"
-                        onPress={() => this.props.navigation.navigate('Home')}
+                        onPress={() => this.props.navigation.navigate('Prva')}
                     />
 
                 </View>
